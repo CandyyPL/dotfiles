@@ -1,0 +1,10 @@
+window:
+  padding:
+    x: 6
+    y: 6
+
+  opacity: 0.9
+
+font:
+  normal:
+    family: MesloLGS NF
