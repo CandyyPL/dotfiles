@@ -1,21 +1,29 @@
 #!/bin/bash
 
-# Install all those things
-sudo pacman -Syu bspwm sxhkd polybar alacritty neovim zsh ttf-cascadia-code picom
+# Arch installation
+# sudo pacman -Syu bspwm sxhkd polybar alacritty zsh feh picom
+
+# Debian install
+# sudo apt install bspwm sxhkd polybar alacritty zsh feh picom
+
+# Make directories
+mkdir ~./config
+mkdir ~./config/bspwm
+mkdir ~./config/sxhkd
+mkdir ~./config/polybar
+mkdir ~./config/alacritty
+mkdir ~./config/nvim
 
 # Apply config
-mv config/bspwm $HOME/.config/
-mv config/sxhkd $HOME/.config/
-mv config/polybar $HOME/.config/
-mv config/alacritty $HOME/.config/
-mv config/nvim $HOME/.config/
-mv config/.zshrc $HOME/
-mv img/arch.jpeg $HOME/wallpaper.jpeg
+cp config/bspwm $HOME/.config/
+cp config/sxhkd $HOME/.config/
+cp config/polybar $HOME/.config/
+cp config/alacritty $HOME/.config/
+cp config/nvim $HOME/.config/
 
-# Install powerlevel10k
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+mv $HOME/.zshrc $HOME/.zshrc_old
+cp config/zsh/.zshrc $HOME/
 
 # Enable zsh
-echo "zsh" >> $HOME/.bashrc
+# echo "zsh" >> $HOME/.bashrc
 

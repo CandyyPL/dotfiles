@@ -24,7 +24,7 @@ super + Print
 
 # browser start
 super + n
-	brave
+	firefox
 
 # spotify start
 super + shift + s
@@ -102,7 +102,7 @@ super + {_,shift + }{1-9,0}
 
 # preselect the direction
 super + ctrl + {Right,Down,Up,Left}
-	bspc node -p {west,south,north,east}
+	bspc node -p {east,south,north,west}
 
 # preselect the ratio
 # super + ctrl + {1-9}
