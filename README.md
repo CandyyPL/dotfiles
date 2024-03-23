@@ -1,22 +1,24 @@
 # My Linux dotfiles
 
-## Install
+## Configuration included
+- alacritty
+- bspwm
+- neovim
+- polybar
+- sxhkd
+- zsh
+
+## Apply config files
 ```bash
-chmod +x install.sh
 ./install.sh
 ```
 
-## Setup installs those packages
-- bspwm
-- sxhkd
-- polybar
-- alacritty
-- zsh
-- feh
-- picom
+## Apply starship prompt
+```bash
+./starship.sh
+```
 
 ## Others
 - [starship cross-shell prompt](https://github.com/starship/starship.git) (already included in .zshrc)
-- font in alacritty config: Fira Code Nerd Font
-- font in polybar config: Cascadia Code
+- font in alacritty & polybar config: Fira Code Nerd Font
 

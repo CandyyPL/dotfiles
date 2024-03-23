@@ -13,8 +13,8 @@ alias cfz='$EDITOR $HOME/.zshrc'
 alias cfb='$EDITOR $HOME/.config/bspwm/bspwmrc'
 alias cfs='$EDITOR $HOME/.config/sxhkd/sxhkdrc'
 alias cfp='$EDITOR $HOME/.config/polybar/config.ini'
-alias cfa='$EDITOR $HOME/.config/alacritty/alacritty.yml'
-alias cfn='$EDITOR $HOME/.config/nvim/init.vim'
+alias cfa='$EDITOR $HOME/.config/alacritty/alacritty.toml'
+alias cfn='$EDITOR $HOME/.config/nvim/init.lua'
 
 eval "$(starship init zsh)"
 
