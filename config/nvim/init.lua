@@ -41,13 +41,16 @@ local function map(m, k, c)
   vim.keymap.set(m, k, c, { silent = true})
 end
 
-map('n', '<C-s>', ':wa<CR>')
-map('n', '<C-w>', ':q<CR>')
+map('n', '<C-s>', ':w<CR>')
+map('n', '<C-x>', ':q<CR>')
 map('n', '<F1>', ':wa<CR>')
 map('n', '<F4>', ':qa<CR>')
 map('n', '<F5>', ':Lazy home<CR>')
 map('n', '<C-b>', ':NvimTreeToggle<CR>')
 map('n', '<C-e>', ':Telescope find_files<CR>')
+map('n', '<C-w>', ':bd<CR>') 
+map('n', '<PageUp>', ':BufferLineCycleNext<CR>')
+map('n', '<PageDown>', ':BufferLineCyclePrev<CR>')
 
 -- Plugins
 
@@ -174,7 +177,7 @@ local bufferline = require('bufferline')
 bufferline.setup {
   options = {
     mode = 'buffers',
-    style_preset = bufferline.style_preset.default,
+    style_preset = bufferline.style_preset.no_italic,
     themable = true,
     numbers = 'ordinal',
     indicator = {
@@ -182,6 +185,13 @@ bufferline.setup {
     },
     buffer_close_icon = '󰅖',
     modified_icon = '●',
+    color_icons = true,
+    separator_style = "slant",
+    hover = {
+      enables = true,
+      delay = 100,
+      reveal = {'close'}
+    },
   }
 }
 
@@ -200,4 +210,19 @@ nvimtree.setup {
     dotfiles = true,
   },
 }
+
+-- OneDark
+local onedark = require('onedark')
+onedark.setup {
+  style = 'darker',
+  code_style = {
+    comments = 'none',
+    keywords = 'none',
+    functions = 'none',
+    strings = 'none',
+    variables = 'none'
+  },
+}
+
+onedark.load()
 
