@@ -1,6 +1,4 @@
--- NeoVim config by Candyy
--- Created      04.09.2023
--- Last update  04.09.2023
+-- NeoVim config
 
 local o = vim.opt
 local g = vim.g
@@ -8,22 +6,36 @@ local g = vim.g
 g.loaded_netrw = 1
 g.loaded_netrwPlugin = 1
 
+-- status line
 o.laststatus = 2
 o.showmode = false
+
+-- line numeration
+o.number = true
+o.relativenumber = true
+o.cursorline = true
+o.numberwidth = 6
 
 o.number = true
 o.cursorline = true
 o.numberwidth = 6
+o.number = true
+o.cursorline = true
+o.numberwidth = 6
 
+-- mouse support
 o.mouse = 'a'
 
+-- searching
 o.ignorecase = true
 o.smartcase = true
 o.hlsearch = true
 
+-- word wrap
 o.wrap = true
 o.breakindent = true
 
+-- indentation
 o.tabstop = 2
 o.softtabstop = 2
 o.shiftwidth = 2
@@ -31,30 +43,46 @@ o.expandtab = true
 o.smartindent = true
 o.autoindent = true
 
+-- swap file disable
 o.swapfile = false
 
+-- colors
 o.termguicolors = true
 
--- Mappings
-
+-- mappings
 local function map(m, k, c)
   vim.keymap.set(m, k, c, { silent = true})
 end
 
-map('n', '<C-s>', ':w<CR>')
-map('n', '<C-x>', ':q<CR>')
-map('n', '<F1>', ':wa<CR>')
-map('n', '<F4>', ':qa<CR>')
-map('n', '<F5>', ':Lazy home<CR>')
-map('n', '<C-b>', ':NvimTreeToggle<CR>')
-map('n', '<C-e>', ':Telescope find_files<CR>')
-map('n', '<C-w>', ':bd<CR>') 
-map('n', '<PageUp>', ':BufferLineCycleNext<CR>')
-map('n', '<PageDown>', ':BufferLineCyclePrev<CR>')
+vim.g.mapleader = ' '
 
--- Plugins
+-- lazy
+map('n', 'lz', ':Lazy home<CR>')
 
+-- save / exit
+map('n', 'ss', ':w<CR>')
+map('n', 'sa', ':wa<CR>')
+map('n', 'zz', ':q<CR>')
+map('n', 'za', ':qa<CR>')
+
+-- nvimtree
+map('n', 'bb', ':NvimTreeToggle<CR>')
+map('n', 'bf', ':NvimTreeFocus<CR>')
+
+-- telescope
+map('n', 'ff', ':Telescope find_files<CR>')
+
+-- bufferline
+map('n', 'tx', ':bd<CR>') 
+map('n', '<PageDown>', ':BufferLineCycleNext<CR>')
+map('n', '<PageUp>', ':BufferLineCyclePrev<CR>')
+
+-- others
+map('n', 'nh', ':nohl<CR>')
+
+-- plugins
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     'git',
@@ -128,8 +156,9 @@ local opts = {}
 
 require('lazy').setup(plugins, opts)
 
--- Lualine
+-- plugins config
 
+-- lualine
 require('lualine').setup {
   options = {
     icons_enabled = true,
@@ -171,8 +200,7 @@ require('lualine').setup {
   extensions = {}
 }
 
--- Bufferline
-
+-- bufferline
 local bufferline = require('bufferline')
 bufferline.setup {
   options = {
@@ -195,8 +223,7 @@ bufferline.setup {
   }
 }
 
--- NvimTree
-
+-- nvimtree
 local nvimtree = require('nvim-tree')
 nvimtree.setup {
   sort_by = "case_sensitive",
@@ -211,7 +238,7 @@ nvimtree.setup {
   },
 }
 
--- OneDark
+-- onedark
 local onedark = require('onedark')
 onedark.setup {
   style = 'darker',

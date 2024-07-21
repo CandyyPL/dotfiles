@@ -14,6 +14,14 @@ super + Escape
 # bspwm hotkeys
 #
 
+# toggle polybar
+super + shift + p
+  polybar-msg cmd toggle
+
+# rofi
+super + d
+  rofi -show run
+
 # lock screen
 super + shift + L
   dm-tool lock
@@ -24,7 +32,7 @@ super + Print
 
 # browser start
 super + n
-	firefox
+	google-chrome-stable
 
 # spotify start
 super + shift + s
