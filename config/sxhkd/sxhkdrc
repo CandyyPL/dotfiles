@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	kitty
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -20,7 +20,7 @@ super + shift + p
 
 # rofi
 super + d
-  rofi -show run
+  ~/.config/rofi/launchers/type-1/launcher.sh
 
 # lock screen
 super + shift + L
@@ -32,7 +32,7 @@ super + Print
 
 # browser start
 super + n
-	google-chrome-stable
+	firefox
 
 # spotify start
 super + shift + s
