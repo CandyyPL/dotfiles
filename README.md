@@ -3,22 +3,27 @@
 ## Configuration included
 - alacritty
 - bspwm
+- fish
+- kitty
+- lazyvim
 - neovim
+- picom
 - polybar
 - sxhkd
-- zsh
-
-## Apply config files
-```bash
-./install.sh
-```
+- tmux
 
 ## Apply starship prompt
 ```bash
 ./starship.sh
 ```
 
-## Others
-- [starship cross-shell prompt](https://github.com/starship/starship.git) (already included in .zshrc)
-- font in alacritty & polybar config: Fira Code Nerd Font
+## Install TPM
+```bash
+./tmux-plugin-manager.sh
+```
+
+### Fonts
+- alacritty: FiraCode Nerd Font
+- kitty: JetBrainsMono Nerd Font
+- polybar: FiraCode Nerd Font
 

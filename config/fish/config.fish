@@ -13,10 +13,8 @@ function clock
 end
 
 function fish_greeting
-    figlet "F I S H" | lolcat
+  # figlet "F I S H" | lolcat
 end
-
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 export EDITOR="nvim"
 

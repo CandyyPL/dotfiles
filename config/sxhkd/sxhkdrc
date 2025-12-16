@@ -18,32 +18,28 @@ super + Escape
 super + shift + p
   polybar-msg cmd toggle
 
-# rofi
-super + d
-  ~/.config/rofi/launchers/type-1/launcher.sh
-
 # lock screen
-super + shift + L
-  dm-tool lock
+# super + shift + L
+#   dm-tool lock
 
 # make screenshot
 super + Print
   scrot -e 'mv $f ~/.screenshots/'
 
 # browser start
-super + n
-	firefox
+super + shift + b
+	zen-browser
 
 # spotify start
-super + shift + s
+super + shift + m
   spotify
 
 # quit/restart bspwm
-super + alt + {q,r}
-	bspc {quit,wm -r}
+super + alt + r
+	bspc wm -r
 
 # close and kill
-super + x
+super + w
 	bspc node -c
 
 # alternate between the tiled and monocle layout
@@ -54,10 +50,6 @@ super + m
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest window
-# super + g
-# 	bspc node -s biggest.window
-
 #
 # state/flags
 #
@@ -66,43 +58,29 @@ super + y
 super + {t,shift + t}
 	bspc node -t {tiled,pseudo_tiled}
 
-# set the node flags
-# super + ctrl + {m,x,y,z}
-# 	bspc node -g {marked,locked,sticky,private}
-
 #
 # focus/swap
 #
 
+# swap nodes in the given direction
+super + shift + alt + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
 # focus the node in the given direction
-super + {shift + ctrl,shift + alt} + {Left,Down,Up,Right}
-	bspc node -{f,s} {west,south,north,east}
+super + shift + ctrl + {h,j,k,l}
+  bspc node -f {west,south,north,east}
 
-# focus the node for the given path jump
-# super + {p,b,comma,period}
-# 	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous window in the current desktop
-# super + {_,shift + }c
-# 	bspc node -f {next,prev}.local.!hidden.window
-
-# focus the next/previous desktop in the current monitor
+# cycle the next/previous workspace in the current monitor
 super + bracket{left,right}
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
-# super + {grave,Tab}
-# 	bspc {node,desktop} -f last
+# send to the given workspace
+super + shift + {1-9,0}
+	bspc node -d '^{1-9,10}'
 
-# focus the older or newer node in the focus history
-# super + {o,i}
-# 	bspc wm -h off; \
-# 	bspc node {older,newer} -f; \
-# 	bspc wm -h on
-
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+# focus given workspace
+super + {1-9,0}
+  bspc desktop -f '^{1-9,10}'
 
 #
 # preselect
@@ -112,29 +90,21 @@ super + {_,shift + }{1-9,0}
 super + ctrl + {Right,Down,Up,Left}
 	bspc node -p {east,south,north,west}
 
-# preselect the ratio
-# super + ctrl + {1-9}
-# 	bspc node -o 0.{1-9}
-
 # cancel the preselection for the focused node
 super + ctrl + space
 	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-# super + ctrl + shift + space
-# 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 #
 # move/resize
 #
 
-# move bottom side and right side
-super + alt + {Right,Down,Up,Left}
-	bspc node -z {right 20 0,bottom 0 20,bottom 0 -20,right -20 0}
+# move top & left side
+super + shift + {h,j,k,l}
+	bspc node -z {left -20 0,top 0 20,top 0 -20,left 20 0}
 
-# move top side and left side
-super + shift + {Right,Down,Up,Left}
-	bspc node -z {left 20 0,top 0 20,top 0 -20,left -20 0}
+# move right & bottom side
+super + alt + {h,j,k,l}
+	bspc node -z {right -20 0,bottom 0 20,bottom 0 -20,right 20 0}
 
 # move a floating window
 super + {Left,Down,Up,Right}
