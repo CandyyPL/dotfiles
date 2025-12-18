@@ -25,8 +25,8 @@ set -Ux FZF_DEFAULT_OPTS "\
 
 export EDITOR="nvim"
 
-alias nv='NVIM_APPNAME="nvim" nvim'
-alias lv='NVIM_APPNAME="lazyvim" nvim'
+alias nv='NVIM_APPNAME="lazyvim" nvim'
+alias nve='NVIM_APPNAME="nvim" nvim'
 alias ls="eza"
 alias yz="yazi"
 alias lg="lazygit"
