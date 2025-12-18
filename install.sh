@@ -90,5 +90,4 @@ for arg in "$@"; do
   install $arg
 done
 
-echo
 echo -e "[${GREEN}+${RESET}] Dotfiles linked successfully!"
