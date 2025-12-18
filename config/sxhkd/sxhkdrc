@@ -34,6 +34,10 @@ super + shift + b
 super + shift + m
   spotify
 
+# obsidian start
+super + shift + o
+  obsidian
+
 # quit/restart bspwm
 super + alt + r
 	bspc wm -r
@@ -55,8 +59,12 @@ super + y
 #
 
 # set the window state
-super + {t,shift + t}
-	bspc node -t {tiled,pseudo_tiled}
+super + {t,shift + t,shift + f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen}
+
+# set the pseudo fullscreen
+super + f
+  bspc config window_gap {0,8}
 
 #
 # focus/swap
