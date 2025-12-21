@@ -57,6 +57,7 @@ vim.call("plug#begin")
 Plug("nvim-lualine/lualine.nvim")
 Plug("catppuccin/nvim", { ["as"] = "catppuccin" })
 Plug("luukvbaal/statuscol.nvim")
+Plug("nvim-mini/mini.nvim")
 
 vim.call("plug#end")
 
@@ -107,6 +108,8 @@ require("lualine").setup({
 require("statuscol").setup({
 	relculright = true,
 })
+
+require("mini.pairs").setup({})
 
 require("catppuccin").setup({
 	transparent_background = true,
