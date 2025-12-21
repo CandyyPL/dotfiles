@@ -26,6 +26,10 @@ super + shift + p
 super + Print
   scrot -e 'mv $f ~/.screenshots/'
 
+# make screenshot (flameshot)
+super + shift + s
+  flameshot gui
+
 # browser start
 super + shift + b
 	zen-browser
@@ -37,6 +41,10 @@ super + shift + m
 # obsidian start
 super + shift + o
   obsidian
+
+# discord start
+super + shift + d
+  discord
 
 # quit/restart bspwm
 super + alt + r
