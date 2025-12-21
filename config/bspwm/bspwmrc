@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # launch sxhkd if not present
-pgrep -x sxhkd >/dev/null || sxhkd &
+killall sxhkd
+sxhkd &
 
 # launch polybar
 $HOME/.config/polybar/launch.sh
@@ -19,7 +20,7 @@ bspc config gapless_monocle true
 bspc config focus_follows_pointer true
 
 # other settings
-feh --bg-fill ~/.pictures/yohoho.jpg
+# feh --bg-fill [WALLPAPER_PATH]
 xsetroot -cursor_name left_ptr
 setxkbmap pl
 picom --config $HOME/.config/picom/picom.conf &
