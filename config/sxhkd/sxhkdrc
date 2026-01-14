@@ -54,13 +54,33 @@ super + alt + r
 super + w
 	bspc node -c
 
-# alternate between the tiled and monocle layout
-super + m
-	bspc desktop -l next
+#
+# function keys
+#
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
+# mute audio
+XF86AudioMute
+  pamixer -t
+
+# lower volume
+XF86AudioLowerVolume
+  pamixer --decrease 5
+
+# raise volume
+XF86AudioRaiseVolume
+  pamixer --increase 5
+
+# mute mic
+XF86AudioMicMute
+  pamixer --source 0 -t
+
+# lower brightness
+XF86MonBrightnessDown
+  $HOME/scripts/brightness.sh lower
+
+# raise brightness
+XF86MonBrightnessUp
+  $HOME/scripts/brightness.sh raise
 
 #
 # state/flags
