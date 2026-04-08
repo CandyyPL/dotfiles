@@ -19,8 +19,8 @@ super + shift + p
   polybar-msg cmd toggle
 
 # lock screen
-# super + shift + L
-#   dm-tool lock
+super + shift + L
+  betterlockscreen
 
 # make screenshot
 super + Print
@@ -45,6 +45,10 @@ super + shift + o
 # discord start
 super + shift + d
   discord
+
+# webstorm start
+super + shift + c
+  idea
 
 # quit/restart bspwm
 super + alt + r
