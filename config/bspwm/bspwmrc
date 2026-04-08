@@ -4,12 +4,23 @@
 killall sxhkd
 sxhkd &
 
+if [[ $(xrandr -q | rg 'HDMI-1 connected') ]]; then
+  xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 --mode 1920x1080 --rotate normal --left-of eDP-1
+
+  bspc monitor HDMI-1 -d I II III IV V
+  bspc monitor eDP-1 -d VI VII VII IX X
+
+  xinput set-prop 13 "libinput Natural Scrolling Enabled" 0
+else
+  xrandr --output eDP-1 --primary --mode 1920x1080 --rotate-normal
+
+  bspc monitor eDP-1 -d I II III IV V
+fi
+
 # launch polybar
 $HOME/.config/polybar/launch.sh
 
 # bspwm settings
-bspc monitor -d I II III IV V
-
 bspc config border_width 0
 bspc config window_gap 8
 bspc config top_padding 34
@@ -20,7 +31,7 @@ bspc config gapless_monocle true
 bspc config focus_follows_pointer true
 
 # other settings
-# feh --bg-fill [WALLPAPER_PATH]
+feh --bg-fill ~/dotfiles/wallpapers/deer-sunset.jpg
 xsetroot -cursor_name left_ptr
 setxkbmap pl
 picom --config $HOME/.config/picom/picom.conf &
