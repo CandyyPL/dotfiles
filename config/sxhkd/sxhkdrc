@@ -14,6 +14,10 @@ super + Escape
 # bspwm hotkeys
 #
 
+# rofi start
+super + d
+  rofi -show drun
+
 # toggle polybar
 super + shift + p
   polybar-msg cmd toggle
