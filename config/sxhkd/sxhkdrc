@@ -24,7 +24,7 @@ super + shift + p
 
 # lock screen
 super + shift + L
-  betterlockscreen
+  betterlockscreen -l dim
 
 # make screenshot
 super + Print
@@ -37,22 +37,6 @@ super + shift + s
 # browser start
 super + shift + b
 	zen-browser
-
-# spotify start
-super + shift + m
-  spotify
-
-# obsidian start
-super + shift + o
-  obsidian
-
-# discord start
-super + shift + d
-  discord
-
-# webstorm start
-super + shift + c
-  idea
 
 # quit/restart bspwm
 super + alt + r
@@ -84,11 +68,11 @@ XF86AudioMicMute
 
 # lower brightness
 XF86MonBrightnessDown
-  $HOME/scripts/brightness.sh lower
+  $HOME/stuff/dotfiles/scripts/brightness.sh lower
 
 # raise brightness
 XF86MonBrightnessUp
-  $HOME/scripts/brightness.sh raise
+  $HOME/stuff/dotfiles/scripts/brightness.sh raise
 
 #
 # state/flags
@@ -125,6 +109,10 @@ super + shift + {1-9,0}
 # focus given workspace
 super + {1-9,0}
   bspc desktop -f '^{1-9,10}'
+
+# focus last workspace
+alt + Tab
+  bspc desktop -f last.occupied
 
 #
 # preselect
