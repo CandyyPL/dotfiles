@@ -46,6 +46,9 @@ o.autoindent = true
 -- swap file disable
 o.swapfile = false
 
+-- clipboard
+o.clipboard = "unnamedplus"
+
 -- colors
 o.termguicolors = true
 
