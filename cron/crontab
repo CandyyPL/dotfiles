@@ -1,1 +1,1 @@
-*/5 * * * * /home/candyy/cron/low_battery_notify.sh
+*/5 * * * * /home/candyy/stuff/cron/low_battery_notify.sh
