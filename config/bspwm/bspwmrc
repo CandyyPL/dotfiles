@@ -31,7 +31,7 @@ bspc config gapless_monocle true
 bspc config focus_follows_pointer true
 
 # other settings
-feh --bg-fill ~/dotfiles/wallpapers/samurai-silhouette.jpg
+feh --bg-fill ~/stuff/dotfiles/wallpapers/star-sky-mountain-forest.jpg
 xsetroot -cursor_name left_ptr
 setxkbmap pl
 picom --config $HOME/.config/picom/picom.conf &
