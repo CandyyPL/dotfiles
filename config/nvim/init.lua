@@ -55,13 +55,24 @@ local Plug = vim.fn["plug#"]
 vim.call("plug#begin")
 
 Plug("nvim-lualine/lualine.nvim")
-Plug("catppuccin/nvim", { ["as"] = "catppuccin" })
+Plug("catppuccin/nvim", { ["branch"] = "vim", ["as"] = "catppuccin" })
 Plug("luukvbaal/statuscol.nvim")
 Plug("nvim-mini/mini.nvim")
+Plug("lambdalisue/vim-suda")
 
 vim.call("plug#end")
 
 -- plugins config
+
+require("statuscol").setup({
+	relculright = true,
+})
+
+require("mini.pairs").setup({})
+
+require("catppuccin").setup({
+	transparent_background = true,
+})
 
 -- lualine
 require("lualine").setup({
@@ -103,16 +114,6 @@ require("lualine").setup({
 	winbar = {},
 	inactive_winbar = {},
 	extensions = {},
-})
-
-require("statuscol").setup({
-	relculright = true,
-})
-
-require("mini.pairs").setup({})
-
-require("catppuccin").setup({
-	transparent_background = true,
 })
 
 vim.cmd.colorscheme("catppuccin-mocha")
