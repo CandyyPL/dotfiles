@@ -19,11 +19,11 @@ super + d
   rofi -show drun
 
 # toggle polybar
-super + shift + p
+super + ctrl + p
   polybar-msg cmd toggle
 
 # lock screen
-super + shift + L
+super + ctrl + L
   betterlockscreen -l dim
 
 # make screenshot
