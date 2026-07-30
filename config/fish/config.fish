@@ -24,6 +24,9 @@ set -Ux FZF_DEFAULT_OPTS "\
 --color=border:#6C7086,label:#CDD6F4"
 
 export EDITOR="nvim"
+export ANDROID_HOME="/opt/android-sdk"
+
+export SOUNDCORE="7C:E9:13:58:B9:44"
 
 alias lv='NVIM_APPNAME="lazyvim" nvim'
 alias nv='NVIM_APPNAME="nvim" nvim'
